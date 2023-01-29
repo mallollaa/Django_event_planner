@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path 
-import os
+# import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
     'users',
     'events',
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,17 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static') ,   
-    '/var/www/static' 
-]
+STATIC_ROOT = BASE_DIR / "static"
 
-# -- we added this line --
+
 
 
 
 # -- The Debug setting -- 
-# STATIC_ROOT = BASE_DIR / "static"
+
 #-- '''his is for the user security 
 # so whenever they upload their media it be saved
 #  inside the media file '''

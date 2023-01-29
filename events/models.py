@@ -1,6 +1,10 @@
 from django.db import models
 # import this for the dateFiled 
 from django.utils import timezone 
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 # Create your models here.
 class Event(models.Model):
     #this will be the fileds for creating the events by the orginizer
@@ -15,3 +19,4 @@ class Event(models.Model):
     # booked_seats_num :
     def __str__(self) : 
         return f"{self.event_name} {self.date_and_time}"
+    user = models.ForeignKey(User,on_delete=models.CASCADE,related_name="events", default=True)

@@ -19,7 +19,7 @@
     </a>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
+          <a class="nav-link active" aria-current="page" href="./login_forms.html">login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -37,8 +37,18 @@
         <h1>Welcom to Event Planner </h1>
         <p>where you can find and create your dream with us </p>
     </div>
-    <div>
+    <div>{% block content %}
+      <form 
+        action = {% url 'register' %}
+        methods = 'POST'
+        {% csrf_token %}
+        {{form}} 
         <button type="submit" class="button"> Register Now!</button>
+      </form>
+      
+      {% endblock content %}
+
+       
     </div>
     
     
