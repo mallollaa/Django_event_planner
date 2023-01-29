@@ -1,0 +1,21 @@
+
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <div style="display: flex; gap: 50px; margin-top: 20px;">
+
+        {% for event in events %}
+        <div class="card" style="width: 18rem;">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{event.name}}</h5>
+                <p class="card-text"></p>
+                <a href="#" class="btn btn-primary">Booking</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %} 
+
+
+
