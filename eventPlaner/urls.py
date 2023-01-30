@@ -24,12 +24,13 @@ from events import views as events_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', TemplateView.as_view(template_name = "index.html"),name='home'),
+    path('/', TemplateView.as_view(template_name = "base.html"),name='base'),
+    path('home/', TemplateView.as_view(template_name = "home.html"),name='home'),
     path('register/', users_views.register_user, name='register'),
     path('login',users_views.login_view, name='login'),
     path('logout',users_views.logout_view, name='logout'),
     path('events_list', events_views.get_events, name='events'),
-    path('event', events_views.events_area, name='event'),
+    # path('event', events_views.events_area, name='event'),
     
 
 ]

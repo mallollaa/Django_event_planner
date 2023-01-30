@@ -1,5 +1,4 @@
-
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
 
     {% block content %}
     <div style="display: flex; gap: 50px; margin-top: 110px;">
@@ -10,7 +9,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{event.name}}</h5>
                 <p class="card-text"></p>
+                <!-- {% if event !='login' %} -->
                 <a href="{% url 'login' %}" class="btn btn-primary">Booking</a>
+                <!-- {% elsse %} -->
+                <!-- <a href="{% url 'home' %}" class="btn btn-primary">Booking</a> -->
             </div>
         </div>
         {% endfor %}
