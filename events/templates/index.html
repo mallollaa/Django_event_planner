@@ -1,5 +1,5 @@
 {% load static %}
-{}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +20,16 @@
     </a>
     <ul class="nav justify-content-end">
         <li class="nav-item">
+          <!-- user == AnonymousUser -->
+          
+          {% if user.is_active %}
+
+          <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">logout</a>
+          {% else %}
           <a class="nav-link active" aria-current="page" href="{% url 'login' %}">login</a>
+            {% endif %}
+          <!-- else -->
+          <!-- show me a logout button -->
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -29,23 +38,23 @@
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">Event Planner</a>
+          <a class="nav-link " href="{% url 'events' %}">Event Planner</a>
         </li>
       </ul>
   </div>
 </nav>
     <div class="continer">
         <h1>Welcom to Event Planner </h1>
+
+        
         <p>where you can find and create your dream with us </p>
     </div>
     <div>{% block content %}
-      <form 
-        action = {% url 'register' %}
-        methods = 'POST'
-        {% csrf_token %}
-        {{form}} 
+
+      <a  href="{% url 'register' %}">
         <button type="submit" class="button"> Register Now!</button>
-      </form>
+      </a>  
+ 
       
       {% endblock content %}
 

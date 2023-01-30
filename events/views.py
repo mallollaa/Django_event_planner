@@ -4,6 +4,7 @@ from .models import Event
 # Create your views here.
 def get_events (request):
     events = Event.objects.all() # pass all the objects inside the events
+    print("Hi farah alsha6ra, om sh'3f")
     occisions =[] #created empty list
     for event in events: # for the one event 
         occisions.append({ # add the objects inside the new array 
@@ -21,4 +22,24 @@ def get_events (request):
     return render (request, 'event_list.html', context)
     
 
+
+def events_area (request):
+    eventArea = Event.objects.all() # pass all the objects inside the events
+    occisions =[] #created empty list
+    for event in eventArea: # for the one event 
+        occisions.append({ # add the objects inside the new array 
+            'name':event.name ,
+            'image':event.image,
+            'Organiser':event.organiser,
+            # 'number of seats':event.number_seats,
+            # 'available seats':event.available_seats,  
+            }
+        )
+    context = { # this will be sent to the html 
+        'eventArea':occisions
+    }
+
+    return render (request, 'events.html', context)
+
+ 
 
