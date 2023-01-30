@@ -38,7 +38,7 @@ def events_area (request):
         'eventArea':occisions
     }
 
-    return render (request, 'events_list.html', context)
+    return render (request,'booking.html', context)
 
  
 

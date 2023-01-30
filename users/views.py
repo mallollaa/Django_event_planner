@@ -30,7 +30,7 @@ def login_view(request):
             auth_user = authenticate(username=username ,password=password)
             if auth_user is not None:
                 login(request , auth_user)
-                return redirect('event')
+                return redirect('events')
     context = {
 
 			'form': form
