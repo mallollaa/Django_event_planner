@@ -12,16 +12,18 @@
             <h5 class="card-title">{{event.name}}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             {% if request.user.is_authenticated %}
+                {% if user.is_staff %}
             <a href="{% url 'booking' id=event.id %}">
                 <button type="submit" class="btn btn-primary">Book Now!</button>
             </a>
-            <a href="{% url 'update-events' id=event.id %}">
-                <button type="submit" class="btn btn-primary">update</button>
+                {% endif %}
+                <a href="{% url 'login' %}">
+                    <button type="submit" class="btn btn-primary">Book Now!</button>
+                </a>
             </a>
             {% else %}
-            <a href="{% url 'login' %}">
-                <button type="submit" class="btn btn-primary">Book Now!</button>
-            </a>
+            <a href="{% url 'update-events' id=event.id %}">
+                <button type="submit" class="btn btn-primary">update</button>
             {% endif %}
         </div>
         </div>
