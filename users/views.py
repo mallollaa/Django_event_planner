@@ -17,6 +17,11 @@ def register_user(request):
     }
     return render(request , 'register_form.html' ,context)
 
+
+# def some_view(request):
+#     if request.user.is_anonymous:
+#         return redirect("login")
+
 def get_login(request):
     return render (request,'login_forms.html')
 
@@ -41,3 +46,6 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+def profile(request):
+    return render (request, "user.html")

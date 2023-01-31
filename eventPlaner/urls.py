@@ -20,17 +20,21 @@ from django.conf import settings
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from users import views as users_views
-from events import views as events_views
+from events import views as events_views 
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', TemplateView.as_view(template_name = "base.html"),name='base'),
+    path('', TemplateView.as_view(template_name = "base.html"),name='base'),
     path('home/', TemplateView.as_view(template_name = "home.html"),name='home'),
     path('register/', users_views.register_user, name='register'),
     path('login/',users_views.login_view, name='login'),
     path('logout/',users_views.logout_view, name='logout'),
     path('events_list/', events_views.get_events, name='events'),
-    path('booking_details/', events_views.events_area, name='booking'),
+    path('booking_details/<int:id>/', events_views.events_area, name='booking'),
+    path('profile/',users_views.profile, name="myprofile"),
+    path('events_list/create/',events_views.create_events, name='create-event'),
+    path('events_list/update/<int:id>/',events_views.update_events,name='update-events'),
 
     # path('event', events_views.events_area, name='event'),
     

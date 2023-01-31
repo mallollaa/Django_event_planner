@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form 
+    action="{% url 'create-event' %}"
+    method="POST"
+    enctype="multipart/form-data" # whenever we deal with meadia 
+    > 
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button type="submit">create</button>
+</form>
+{% endblock %}

@@ -11,7 +11,7 @@
     <title>Event Planner</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body class="background">
+<body >
 
     <nav class="navbar bg-body-tertiary">
   <div class="container">
@@ -19,33 +19,82 @@
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLx5YwSKgYZ_4xQubfIj5kgtEZomISF4KYMWXEHeYgazsHrUQwUTf1ihhHHNWByj_Qoc&usqp=CAU" alt="Bootstrap" width="30" height="25">
     </a>
     <ul class="nav justify-content-end">
-        <li class="nav-item">
+        <li class="nav-item"></li>
+          <a class="nav-link " href="{% url 'events' %}">Explore</a>
           {% if request.user.is_authenticated %}
+          <a class="nav-link" href="{% url 'create-event' %}">create</a>
+          <li class="nav-item"></li>
+          <a class="nav-link active" aria-current="page" href="{% url 'myprofile' %}">profile</a>
+           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">logout</a>
+        </li>
+          
           {% else %}
           <a class="nav-link active" aria-current="page" href="{% url 'login' %}">login</a>
+          
           {% endif %}
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="{% url 'events' %}">Event Planner</a>
-        </li>
+       
+       
+          
+         
+        
       </ul>
   </div>
 </nav>
 
+<div class="">
 
-{% block content %}
-{% endblock %}
-    
+  {% block content %}
+  {% endblock %}
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
+<hr>
+<br>
+<hr>
+<footer style="text-align:center">
+  <div id = "footer">
+   
+    this is a footer
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div style="flex-wrap:unset;">
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
 </body>
+
 </html>
 
 
