@@ -35,6 +35,7 @@ urlpatterns = [
     path('profile/',users_views.profile, name="myprofile"),
     path('events_list/create/',events_views.create_events, name='create-event'),
     path('events_list/update/<int:id>/',events_views.update_events,name='update-events'),
+    path('profile/update/',users_views.update_user, name='update-profile')
 
     # path('event', events_views.events_area, name='event'),
     

@@ -1,41 +1,63 @@
 {% extends 'base.html' %}
 
     {% block content %}
-    <div>
-        <h5 style="color: crimson;padding: 15px; font-size:16px;"> welcome {{user.username}}</h5>
+    <div style="background-color:navajowhite;">
+        <h5 style="color: crimson;padding: 15px; font-size:16px; font-family: 'Courier New', Courier, monospace;"> welcome {{user.username}}</h5>
     {% if events %}
-    {% for event in events %}
-              
-    <div class="card" style="width: 25rem; padding: 20px 10px 100px; margin: 10px; float:left">
-        <img src="{{event.image.url}}" class="card-img-top" alt="{{event.name}}">
-        <div class="card-body">
-            <h5 class="card-title">{{event.name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            {% if request.user.is_authenticated %}
-                {% if user.is_staff %}
-            <a href="{% url 'booking' id=event.id %}">
-                <button type="submit" class="btn btn-primary">Book Now!</button>
-            </a>
-                {% endif %}
-                <a href="{% url 'login' %}">
-                    <button type="submit" class="btn btn-primary">Book Now!</button>
-                </a>
-            </a>
-            {% else %}
-            <a href="{% url 'update-events' id=event.id %}">
-                <button type="submit" class="btn btn-primary">update</button>
-            {% endif %}
-        </div>
-        </div>
+    <div>
+        <div class="card-group container text-center  ">
+            <div class="row">
+               
+            
+                <div class="card container text-center ">
+            {% for event in events %}
+            
             
         
-            
+
+
         
-    
-    {% endfor %}
-    {% else %}
-    <p>No Events yet!</p>
+            <div class="col p-15 m-0.5" style="padding: 2px; margin: 20px;">
+            <img src="{{event.image.url}}" class="card-img-top" style="width: 40%;" alt="{event.name}}">
+            <div class="card-body">
+              <h5 class="card-title">{{event.name}}</h5>
+              <p class="card-text">Avalible seats :{{event.available_seats}}</p>
+              {% if request.user.is_authenticated %}
+              {% if user.is_staff %}
+              <a href="{% url 'update-events' id=event.id %}">
+                  <button type="submit">update</button></a>
+                  {% endif %}
+                  <a href="{% url 'booking' id=event.id %}">
+                      <button type="submit">Book Now!</button>
+                  </a>
+                  
+                  {% else %}
+                  <a href="{% url 'login' %}">
+                      <button type="submit">Book Now!</button></a>
+                      {% endif %}
+                      {% endfor %}
+                    
+                    
+                    
+                    
+            
+          
+          {% endif %}
+        </div>
+        
     </div>
-    {% endif %}
-    {% endblock %} 
+    
+    <br>
+
+        
+        
+        
+        
+        
+      
+</div>
+<footer>
+    {% endblock %}
+</footer>
+ 
 

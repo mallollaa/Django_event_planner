@@ -1,23 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="continer">
-  <body class="background">
-    <h1>Welcome to Event Planner </h1>
-
+<body style = "background-color :pink">
   
+      
+  <div 
+  style=" height: 50vh; display: flex; justify-content: center; flex-direction: column; margin-top: 10%;margin-left: 30%;"
+  >
+    <div style="font-family:'Courier New', Courier, monospace;">
+      <h1>Welcome to Event Planner </h1>
       <p>where you can find and create your dream with us </p>
     </div>
+    
     <div>
-
-    <a  href="{% url 'register' %}">
-      <button type="submit" class="button"> Register Now!</button>
-    </a>  
-  </body>
-  
-
-
-
-
- 
-</div>
+      <a href="{% url 'register' %}">
+        <button type="submit" class="btn btn-light btn-rounded"
+        style="margin-left: 10%;"
+        > Register Now!</button>
+      </a>
+      
+    </div>
+  </div>
+</body>
+<br>
 {% endblock %}

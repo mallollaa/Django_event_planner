@@ -49,3 +49,18 @@ def logout_view(request):
 
 def profile(request):
     return render (request, "user.html")
+
+def update_user(request):
+    form = RegisterForm(instance=request.user)
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user =form.save(commit=False)
+            user.set_password(user.password)
+            user.save()
+            login(request, user)
+            return redirect('home')
+    context = {
+        'form': form
+    }
+    return render(request , 'update_user.html' ,context)

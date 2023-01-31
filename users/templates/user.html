@@ -41,8 +41,12 @@
                     <p class="text-muted">{{event.name}}</p>
                   </div>
                   <div class="col-6 mb-3">
-                    <h6>Most Viewed</h6>
-                    <p class="text-muted">Dolor sit amet</p>
+                    {% if user.is_staff %}
+                    <a href="{% url 'create-event' %}">
+                        <button type="submit" class="btn btn-primary">Create Event</button></a>
+                        {% endif %}
+                    <a href="{% url 'update-profile' %}">
+                        <button type="submit" class="btn btn-primary">update</button></a>
                   </div>
                 </div>
                 <div class="d-flex justify-content-start">

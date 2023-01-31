@@ -12,9 +12,9 @@ def get_events (request):
             'name':event.name ,
             'id':event.id, # we pass the id of the events
             'image':event.image,
-            'Organiser':event.organiser,
-            # 'number of seats':event.number_seats,
-            # 'available seats':event.available_seats,  
+            'Organiser':event.user,
+
+            'available_seats':event.available_seats,  
             }
         )
     context = { # this will be sent to the html 

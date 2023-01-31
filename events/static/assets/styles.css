@@ -1,62 +1,10 @@
-.background{
-    margin: 0;
-    padding: 0;
-    background-image: url('https://images.unsplash.com/photo-1559456751-057ed03f3143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60');
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-}
+ 
+.myhome{
+  background-color: red;
+  margin-top: auto;
+  margin-bottom: auto;
 
-.continer{
-    margin: 30px;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,4,10, 0.6); /* Black w/opacity/see-through */
-    color: rgb(238, 230, 230);
-    font-weight: bold;
-    font-family: fantasy;
-    
-    border: 1px solid #f1f1f1;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0.1;
-    width: 90%;
-    padding: 70px;;
-    text-align: center;
 }
-.button {
-    transition-duration: 0.6s;
-    padding: 12px 20px;
-    border-radius: 25px;
-    background-color: rgba(21, 8, 8, 0.4);
-    color: rgb(231, 216, 227);
-    font-weight: bold;
-    
-    position:absolute;
-    top: 65%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    text-align: center;
-}
-  
-  .button:hover {
-    background-color: #b33a6b; 
-    color: rgb(6, 4, 0);
-    padding-right: 26px;
-  }
-  .events{
-    padding: 60px;
-    margin: 60px;
-    display: flex; 
-  }
-  /* .form > input {
-    
-  }  */
-  
-  
 
   
   

@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
     {% block content %}
+    <div>
     {% csrf_token %}
     
-    {{event.name}}
+    <h2>Event :{{eventArea.name}}</h2>
     
+    <div style="width:20px; padding: 20px;"> <img src="{{eventArea.image.url}}"/></div>
+    
+    <h2> Avalible seats :{{eventArea.available_seats}}</h2>
+   
+    <h2>Organiser: {{eventArea.organiser}}</h2>
+    </div>
+    <br>
+    <br>
     {% endblock %} 
